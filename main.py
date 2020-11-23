@@ -2,6 +2,7 @@ import datetime
 import pandas as pn
 import collections
 
+
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
@@ -12,7 +13,7 @@ age = now_date - release_date
 
 
 categories = collections.defaultdict(list)
-excel_wines = pn.read_excel('drinks.xlsx', usecols=['Категория',	'Название',	'Сорт',	'Цена',	'Картинка', 'Акция']).to_dict(orient='records')
+excel_wines = pn.read_excel('drinks.xlsx', usecols=['Категория',	'Название',	'Сорт',	'Цена',	'Картинка', 'Акция']).fillna(0).to_dict(orient='records')
 for wine in excel_wines:
 	categories[wine['Категория']].append(wine)
 
