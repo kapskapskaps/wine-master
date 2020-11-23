@@ -5,7 +5,7 @@
 ## Запуск
 
 - Скачайте код
-- В корневую папку каталога сохраните файл "drinks.xlsx", файл должен быть составлен [по этому примеру](https://docs.google.com/spreadsheets/d/1sLXaZNCHK1D9oVUeXUBfRa_z_OVKRE6FV_W2T43m2zs/edit?usp=sharing)
+- В корневую папку каталога сохраните файл "drinks.xlsx", файл должен быть составлен [по этому образцу](https://docs.google.com/spreadsheets/d/1sLXaZNCHK1D9oVUeXUBfRa_z_OVKRE6FV_W2T43m2zs/edit?usp=sharing)
 - Запустите сайт командой `python3 main.py`
 - Перейдите на сайт по адресу [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
