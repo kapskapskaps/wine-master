@@ -12,7 +12,7 @@ age = now_date - release_date
 
 
 categories = collections.defaultdict(list)
-excel_wines = pn.read_excel('wine3.xlsx', usecols=['Категория',	'Название',	'Сорт',	'Цена',	'Картинка', 'Акция']).to_dict(orient='records')
+excel_wines = pn.read_excel('drinks.xlsx', usecols=['Категория',	'Название',	'Сорт',	'Цена',	'Картинка', 'Акция']).to_dict(orient='records')
 for wine in excel_wines:
 	categories[wine['Категория']].append(wine)
 
