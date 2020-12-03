@@ -16,7 +16,7 @@ drinks_dct = collections.defaultdict(list)
 excel_wines = pn.read_excel('drinks.xlsx', usecols=['Категория',	'Название',	'Сорт',	'Цена',	'Картинка', 'Акция']).fillna(0).to_dict(orient='records')
 
 for wine in excel_wines:
-	categories[wine['Категория']].append(wine)
+	drinks_dct[wine['Категория']].append(wine)
 
 env = Environment(
 	loader = FileSystemLoader('.'),
