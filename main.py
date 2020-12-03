@@ -12,7 +12,7 @@ release_date = 1920
 age = now_date - release_date
 
 
-categories = collections.defaultdict(list)
+drinks_dct = collections.defaultdict(list)
 excel_wines = pn.read_excel('drinks.xlsx', usecols=['Категория',	'Название',	'Сорт',	'Цена',	'Картинка', 'Акция']).fillna(0).to_dict(orient='records')
 
 for wine in excel_wines:
@@ -26,7 +26,7 @@ env = Environment(
 template = env.get_template('template.html')
 rendered_page = template.render(
 	age = age,
-	categories = categories,
+	drinks_dct = drinks_dct,
 	)
 
 with open('index.html', 'w', encoding="utf8") as file:
