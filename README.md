@@ -12,7 +12,7 @@
 Чтобы добавить новый товар, нужно:
 1. создать новый .xlsx файл по образцу example.xlsx
 1. при запуске сайта вместо "example.xlsx" указать путь к вашему новому файлу
--- **например:** `python3 main.py -fp  C:\Users\Username\Desktop\list_wines.xlxs`
+- **Например:** `python3 main.py -fp  C:\Users\Username\Desktop\list_wines.xlxs`
 
 
 ## Цели проекта
