@@ -5,9 +5,14 @@
 ## Запуск
 
 - Скачайте код
-- В корневую папку каталога сохраните файл "drinks.xlsx", файл должен быть составлен [по этому образцу](https://docs.google.com/spreadsheets/d/1sLXaZNCHK1D9oVUeXUBfRa_z_OVKRE6FV_W2T43m2zs/edit?usp=sharing)
-- Запустите сайт командой `python3 main.py`
+- Запустите сайт командой `python3 main.py -fp example.xlsx`
 - Перейдите на сайт по адресу [http://127.0.0.1:8000](http://127.0.0.1:8000).
+
+## Изменения и добавление новых товаров
+Чтобы добавить новый товар, нужно:
+1. создать новый .xlsx файл по образцу example.xlsx
+2. при запуске сайта вместо "example.xlsx" указать путь к вашему новому файлу, например: `python3 main.py -fp  C:\Users\Username\Desktop\list_wines.xlxs`
+
 
 ## Цели проекта
 
