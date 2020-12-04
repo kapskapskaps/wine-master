@@ -1,3 +1,5 @@
+import os
+import argparse
 import datetime
 import pandas as pn
 import collections
@@ -7,13 +9,18 @@ from http.server import HTTPServer, SimpleHTTPRequestHandler
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 
+parser = argparse.ArgumentParser(description='Укажите путь к файлу')
+parser.add_argument('-fp', help='Путь к файлу')
+args = parser.parse_args()
+
+
 now_date = datetime.datetime.now().year
 release_date = 1920
 age = now_date - release_date
 
 
 drinks_dct = collections.defaultdict(list)
-excel_wines = pn.read_excel('drinks.xlsx', usecols=['Категория',	'Название',	'Сорт',	'Цена',	'Картинка', 'Акция']).fillna(0).to_dict(orient='records')
+excel_wines = pn.read_excel(args.fp, usecols=['Категория',	'Название',	'Сорт',	'Цена',	'Картинка', 'Акция']).fillna(0).to_dict(orient='records')
 
 for wine in excel_wines:
 	drinks_dct[wine['Категория']].append(wine)
