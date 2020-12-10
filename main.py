@@ -20,9 +20,9 @@ age = now_date - release_date
 
 
 all_drinks = collections.defaultdict(list)
-excel_file = pn.read_excel(args.fp, usecols=['Категория',	'Название',	'Сорт',	'Цена',	'Картинка', 'Акция']).fillna(0).to_dict(orient='records')
+excel_file_drinks = pn.read_excel(args.fp, usecols=['Категория',	'Название',	'Сорт',	'Цена',	'Картинка', 'Акция']).fillna(0).to_dict(orient='records')
 
-for wine in excel_file:
+for wine in excel_file_drinks:
 	all_drinks[wine['Категория']].append(wine)
 
 env = Environment(
