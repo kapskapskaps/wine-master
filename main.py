@@ -19,11 +19,11 @@ release_date = 1920
 age = now_date - release_date
 
 
-drinks = collections.defaultdict(list)
-get_excelfile = pn.read_excel(args.fp, usecols=['Категория',	'Название',	'Сорт',	'Цена',	'Картинка', 'Акция']).fillna(0).to_dict(orient='records')
+all_drinks = collections.defaultdict(list)
+excel_file = pn.read_excel(args.fp, usecols=['Категория',	'Название',	'Сорт',	'Цена',	'Картинка', 'Акция']).fillna(0).to_dict(orient='records')
 
-for wine in get_excelfile:
-	drinks[wine['Категория']].append(wine)
+for wine in excel_file:
+	all_drinks[wine['Категория']].append(wine)
 
 env = Environment(
 	loader = FileSystemLoader('.'),
@@ -33,7 +33,7 @@ env = Environment(
 template = env.get_template('template.html')
 rendered_page = template.render(
 	age = age,
-	drinks = drinks,
+	drinks = all_drinks,
 	)
 
 with open('index.html', 'w', encoding="utf8") as file:
