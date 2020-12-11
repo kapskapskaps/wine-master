@@ -15,8 +15,8 @@ args = parser.parse_args()
 
 
 now_date = datetime.datetime.now().year
-release_date = 1920
-age = now_date - release_date
+winery_foundation_year = 1920
+winery_age = now_date - winery_foundation_year
 
 
 all_drinks = collections.defaultdict(list)
@@ -32,7 +32,7 @@ env = Environment(
 
 template = env.get_template('template.html')
 rendered_page = template.render(
-	age = age,
+	winery_age = winery_age,
 	all_drinks = all_drinks,
 	)
 
